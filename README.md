@@ -26,6 +26,11 @@ Learned:
 - grabbing dataset property from a DOM node returns you an object that includes any values you set with the prefix data-.
 - Use document.documentElement.style.setProperty("name of input", "value here") to change variable value
 
+### Day 3 - Array Cardio Day 1
+
+Learned:
+- Nothing new learned, mostly just reinforced knowledge of Array methods.
+
 
 
 
