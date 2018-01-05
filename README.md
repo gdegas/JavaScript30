@@ -51,6 +51,18 @@ Learned:
 Learned:
 - Re-inforced usage of every(), some(), find(), and findIndex() methods and some usages for them.
 
+### Day 8 - Fun with HMTL5 Canvas
+
+Learned:
+- This is the first time I've used canvas at all in general so there's a few things I never knew
+  - To create a canvas you create an HTML element with the tag canvas on it and set a default width and height
+  - In order to work with the canvas, you have to store the element in a variable 
+  - After you store the canvas in a variable you call the method getContext on it and pass in '2d' and store that in a variable to use the context, in my case I called my variable 'ctx'.
+- Some of the different properties you can play around with and change on the context object are the strokeStyle (color of the stroke), lineJoin(in my case round which makes the line rounded), lineCap(which gives the end of the lines styling, my case it was 'round'), and lineWidth.
+- To start off, in order to have the user start drawing, you have to determine an event that will prompt the drawing, in my case it was a mousedown event that triggered the function to draw and a mousemove event listener.
+- In the draw function, in order to show anything when user clicks, you have to call beginPath() on context object, the moveTo() and pass in the coordinates of the ending x and y points of the last mousedown event, the lineTo() method and pass in the coordinates of the mousemove event object's offsetX and offsetY properties and lastly call the stroke() method on the context object.
+- For a little added effect, I learned how you can set the strokeStyle property to an HSL color and by using backtics you can set the hue part of the hsl color to a variable inline by using the ${hue} syntax and increment the hue as the user moves.
+
 
 
 
