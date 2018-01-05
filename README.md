@@ -26,10 +26,31 @@ Learned:
 - grabbing dataset property from a DOM node returns you an object that includes any values you set with the prefix data-.
 - Use document.documentElement.style.setProperty("name of input", "value here") to change variable value
 
-### Day 3 - Array Cardio Day 1
+### Day 4 - Array Cardio Day 1
 
 Learned:
 - Nothing new learned, mostly just reinforced knowledge of Array methods.
+
+### Day 5 - Flex Panels
+
+Learned:
+- .querySelectorAll doesnt return an array but a nodelist that doesn't include the mothods on the Array prototype.
+- Used event.propertyName property to target which event is being triggered.
+- first time using transitionend event.
+
+### Day 6 - Type Ahead
+
+Learned:
+- You can easily create a new array with a list of data by using push method and the spread operator.
+- Create a new regex object and pass in the parameter of the "word to match" in order to match the value of the input element is how you can identify what is being typed by the user. 
+- the 'this' keyword in a function thats passed as an event listener to an element, is the element the event is being triggered on.
+- More template literal usage while including expressions gave me insight on how I could make things look a little better when coding in JS
+
+### Day 7 - Array Cardio Day 2
+
+Learned:
+- Re-inforced usage of every(), some(), find(), and findIndex() methods and some usages for them.
+
 
 
 
