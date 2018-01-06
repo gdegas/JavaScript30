@@ -63,6 +63,15 @@ Learned:
 - In the draw function, in order to show anything when user clicks, you have to call beginPath() on context object, the moveTo() and pass in the coordinates of the ending x and y points of the last mousedown event, the lineTo() method and pass in the coordinates of the mousemove event object's offsetX and offsetY properties and lastly call the stroke() method on the context object.
 - For a little added effect, I learned how you can set the strokeStyle property to an HSL color and by using backtics you can set the hue part of the hsl color to a variable inline by using the ${hue} syntax and increment the hue as the user moves.
 
+### Day 9 - Dev Tools Tricks
+
+Learned:
+- To check and see what part of your JS is modifying an element, inspect the element and go to break on, and click attribute modifications. Your code will pause and highlight the JS responsible for the modification.
+- For console log, if you type %c in front of your log message, you can add style attributes after a comma such as : console.log('%c Hello', 'font-size: 30px; color: blue; background: red;')
+- Console.dir() will log an interactive representatino of the object passed with properties and methods available to view
+- Console.group() will group console logs by whatere you pass it to by each object, and finish with console.groupEnd()
+- Console.count() logs the number of times console.count is called, and has an optional argument where you can choose any label for it
+- Console.time() will show you the time it take for any of the code between the console.time() statement to the console.timeEnd() statement. Useful for AJAX requests and such.
 
 
 
