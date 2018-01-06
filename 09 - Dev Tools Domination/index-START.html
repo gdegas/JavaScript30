@@ -18,29 +18,60 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hey I am a %s player', 'big')
 
     // Styled
+    console.log('%c Hello', 'color: red; background: blue; font-size: 20px')
 
     // warning!
+    console.warn('Warning!');
 
     // Error :|
+    console.error('Error!');
 
     // Info
 
     // Testing
 
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('bam'), 'Nope!');
+
     // clearing
 
     // Viewing DOM Elements
+    console.dir(p);
+    console.clear();
 
     // Grouping together
 
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} in dog years old`);
+      console.groupEnd(`${dog.name}`);
+    })
+
     // counting
+    console.count('gerard');
+    console.count('gerard');
+    console.count('gerard');
+    console.count(p);
+    console.count('gerard');
+    console.count();
 
     // timing
-
+    console.time('fetching data');
+    fetch('https://api.github.com/users/gdegas')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      })
   </script>
 </body>
 </html>
