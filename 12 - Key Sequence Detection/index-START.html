@@ -6,7 +6,31 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+  <audio id="hadoken" src="ryuhadoken.wav"></audio>
 <script>
+
+  const pressed = [];
+  const secretCode = ['ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+
+
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    // if (pressed == secretCode) {
+    //   console.log('DING DING');
+    //   cornify_add();
+    // }
+    const hadoken = document.querySelector('#hadoken');
+    
+    console.log(pressed);
+    console.log(secretCode);
+    if (pressed.length==secretCode.length && secretCode.every((v,i)=> v === pressed[i])) {
+      hadoken.play();
+      console.log('theyre equal');
+    }
+    
+  })
 </script>
 </body>
 </html>
