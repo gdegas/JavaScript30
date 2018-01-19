@@ -73,6 +73,15 @@ Learned:
 - Console.count() logs the number of times console.count is called, and has an optional argument where you can choose any label for it
 - Console.time() will show you the time it take for any of the code between the console.time() statement to the console.timeEnd() statement. Useful for AJAX requests and such.
 
+### Day 10
 
+### Day 11
+
+### Day 12
+
+Learned:
+- I never knew anything about a Konami code and especially didn't know that they exist among famous websites like vogue.com and buzzfeed
+- I added my own sequence different from the video, his secret code was wesbos, but I kept it oldschool and did a sequence of up, down, up, down, left, right, left, right, b, a then enter. 
+_ Also added a hadoken sound for added cool effect!
 
 
