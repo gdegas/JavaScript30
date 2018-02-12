@@ -28,14 +28,63 @@
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
-
+  // either an empty object or the array from local storage
+  const items = JSON.parse(localStorage.getItem('items')) || [];
+    // function to add html onto the page
   function addItem(e) {
     e.preventDefault();
-    console.log('hello');
+    const submitted = (this.querySelector('[name = item]')).value
+    // create an object with text and isDone properties
+    const item = {
+      text: submitted,
+      isDone: false
+    } 
+    // adding each item typed to our array
+    items.push(item)
+    // populating list with our items array and our UL
+    populateList(items, itemsList)
+    // set local storage to item: items array, name and value
+    localStorage.setItem('items', JSON.stringify(items))
+    this.reset()
   }
 
+  // function to populate list
+  function populateList(tapas = [], tapasList) {
+    // set the html of the ul to our array of items
+    tapasList.innerHTML = tapas.map((tapa, index) => {
+      return `
+        <li>
+          <input data-id="${index}" type="checkbox" id="item${index}" ${tapa.isDone ? 'checked': ''} />
+          <label for="item${index}">${tapa.text}</label>
+        </li>
+      `;
+    }).join('');
+  }
+  // create a function that makes sure you're clicking on an input, switches the property isDone of the object in the items array, and then repopulates list
+  function toggleDone(e) {
+    // if its not an input clicked on, don't run the function
+    if(!e.target.matches('input')) {
+      return
+    }
+    const el = e.target
+    // get the data-index property of the element
+    const index = el.dataset.id
+    // in your array at index of data-id, swap the property of isDone
+    items[index].isDone = !items[index].isDone
+    // reset the localStorage
+    localStorage.setItem('items', JSON.stringify(items))
+    // re-populate the list
+    populateList(items, itemsList)
+  }
+
+  // checks items list for 
+
+  // populating list that's coming from localstorage on page load
+  populateList(items, itemsList)
+
   addItems.addEventListener('submit', addItem)
+  // add a click event listener to the ul
+  itemsList.addEventListener('click', toggleDone)
 
 </script>
 
